@@ -1,5 +1,6 @@
 import 'dart:developer';
 
+import 'package:animation_3d/ui/common/resources/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
@@ -59,14 +60,14 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
               index % 2 == 0 ? _secondAnimation.value : _firstAnimation.value;
           final radius = BorderRadius.circular(40 * animationValue);
           return PhysicalModel(
-            color: Colors.purple,
+            color: AppColors.appColors[index],
             elevation: 10.0,
             borderRadius: radius,
             child: Container(
               height: size,
               width: size,
               decoration: BoxDecoration(
-                color: Colors.purple,
+                color: AppColors.appColors[index],
                 border: Border.all(
                   color: Colors.white,
                   width: 2,
