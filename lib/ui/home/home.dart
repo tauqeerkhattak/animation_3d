@@ -11,7 +11,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> with TickerProviderStateMixin {
-  final numberOfBoxes = 10;
+  final numberOfBoxes = AppColors.purple.length;
   late AnimationController _firstController;
   late AnimationController _secondController;
   late Animation<double> _firstAnimation;
@@ -60,18 +60,14 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
               index % 2 == 0 ? _secondAnimation.value : _firstAnimation.value;
           final radius = BorderRadius.circular(40 * animationValue);
           return PhysicalModel(
-            color: AppColors.appColors[index],
+            color: AppColors.purple[index],
             elevation: 10.0,
             borderRadius: radius,
             child: Container(
               height: size,
               width: size,
               decoration: BoxDecoration(
-                color: AppColors.appColors[index],
-                border: Border.all(
-                  color: Colors.white,
-                  width: 2,
-                ),
+                color: AppColors.purple[index],
                 borderRadius: radius,
               ),
             ),
